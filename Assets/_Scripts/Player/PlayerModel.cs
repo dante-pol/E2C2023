@@ -11,6 +11,9 @@ public class PlayerModel : MonoBehaviour
     [Header("Data player")]
     [SerializeField] private int _health;
     [SerializeField] private int _maxHealth;
+    [SerializeField] private bool _isShield;
+
+    [SerializeField] private GameObject _shield;
     
     private PlayerModel _playerModel;
 
@@ -19,8 +22,9 @@ public class PlayerModel : MonoBehaviour
     private void Start()
     {
         _playerModel = gameObject.GetComponent<PlayerModel>();
-
+        _shield.SetActive(false);
     }
+    #region TrashAndCoins
     public void AddTrash(int TrashCount)
     {
         TrashCounter = TrashCounter + TrashCount;
@@ -45,6 +49,21 @@ public class PlayerModel : MonoBehaviour
             TrashCounter = 0;
         }
     }
+    #endregion
+
+    public void ActiveShield()
+    {
+        _isShield = true;
+        _shield.SetActive(true);
+    }
+
+    public void DisActiveShield()
+    {
+        _isShield = false;
+        _shield.SetActive(false);
+    }
+
+    
 
     #region Health action
     public void AddHealth(int health)
@@ -57,8 +76,20 @@ public class PlayerModel : MonoBehaviour
 
     public void RemoveHealth(int health)
     {
-        if (_health > 0)
-            _health -= health;
+
+        if (_isShield)
+        {
+            DisActiveShield();
+            return;
+        }
+        else
+        {
+            if (_health > 0)
+            {
+                _health -= _health;
+            }
+        }
+        
 
         if (_health == 0)
         {

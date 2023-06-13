@@ -14,6 +14,7 @@ public class PlayerPickup : MonoBehaviour
     {
         var trash = collision.gameObject.GetComponent<Trash>();
         var coin = collision.gameObject.GetComponent<Coin>();
+        var shield = collision.gameObject.GetComponent<Shield>();
 
         if (trash != null)
         {
@@ -25,6 +26,12 @@ public class PlayerPickup : MonoBehaviour
         {
             _playerModel.AddCoins(coin.Count);
             coin.CoinDestroy();
+        }
+
+        if (shield != null)
+        {
+            _playerModel.ActiveShield();
+            shield.ShieldDestroy();
         }
     }
 }
