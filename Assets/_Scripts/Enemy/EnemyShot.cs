@@ -4,9 +4,9 @@ public class EnemyShot : MonoBehaviour
 {
     [SerializeField] private GameObject _bullet;
     [SerializeField] private float fireRate;
-    [SerializeField] private float _nextFire;
-    [SerializeField] private float _time;
-    [SerializeField]private bool isShot;
+    private float _nextFire;
+
+    [SerializeField] private ShotLocationEnemy _shotLocation;
 
     private void Start()
     {
@@ -20,7 +20,7 @@ public class EnemyShot : MonoBehaviour
 
     private void TimeToFire()
     {
-        if(isShot == true)
+        if(_shotLocation._isShot == true)
         {
             if (Time.time > _nextFire)
             {
@@ -30,13 +30,5 @@ public class EnemyShot : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        isShot = true;
-    }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        isShot= false;
-    }
 }

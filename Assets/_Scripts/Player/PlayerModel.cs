@@ -86,7 +86,7 @@ public class PlayerModel : MonoBehaviour
         {
             if (_health > 0)
             {
-                _health -= _health;
+                _health -= health;
             }
         }
         
