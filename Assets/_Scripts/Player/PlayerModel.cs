@@ -5,8 +5,8 @@ public class PlayerModel : MonoBehaviour
 {
     [Header("Data currency")]
     [SerializeField] private double TrashCounter = 0;
-    [SerializeField] private double CoinsCounter = 0;
     [SerializeField] private double minTrashForConvertCoins = 0;
+    public double CoinsCounter = 0;
 
     [Header("Data player")]
     [SerializeField] private int _health;
