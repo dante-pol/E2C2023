@@ -10,24 +10,36 @@ public class PlayerMove : MonoBehaviour
     private Buffs _buffs;
     private float _velocityX;
     [SerializeField] private float _velocityY;
+    private Animator _animator;
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _buffs = GetComponent<Buffs>();
+        _animator = GetComponent<Animator>();
     }
 
     
     private void Update()
     {
-        _velocityX = _joystick.Horizontal * Speed;
-        _rb.velocity += new Vector2(_velocityX, 0);
+        if(GetComponent<PlayerModel>()._death == false)
+        {
+            _velocityX = _joystick.Horizontal * Speed;
 
-        SlowingFlow();
+            if (_joystick.Horizontal > 0)
+            {
+                _rb.velocity -= new Vector2(_velocityX, 0);
+            }
+            else if (_joystick.Horizontal < 0)
+            {
+                _rb.velocity += new Vector2(_velocityX, 0);
+            }
 
-      //  if (Mathf.Abs(_rb.velocity.sqrMagnitude) > MaxSpeed * MaxSpeed)
-      //  {
+            SlowingFlow();
+            Flip();
+
             _rb.velocity = new Vector2(MaxSpeed * _joystick.Horizontal, _velocityY);
-      //  }
+            _animator.SetFloat("velocityHorizontal", Mathf.Abs(_velocityX));
+        }
     }
 
     public void SlowingFlow()
@@ -47,6 +59,18 @@ public class PlayerMove : MonoBehaviour
         else
         {
             _velocityY = _rb.velocity.y;
+        }
+    }
+
+    private void Flip()
+    {
+        if(_joystick.Horizontal < 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else if(_joystick.Horizontal > 0) 
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
         }
     }
 }

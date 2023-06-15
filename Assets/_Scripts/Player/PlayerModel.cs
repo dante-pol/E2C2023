@@ -9,20 +9,24 @@ public class PlayerModel : MonoBehaviour
     [SerializeField] private double minTrashForConvertCoins = 0;
 
     [Header("Data player")]
+    [HideInInspector] public bool _death = false;
     [SerializeField] private int _health;
     [SerializeField] private int _maxHealth;
     [SerializeField] private bool _isShield;
 
     [SerializeField] private GameObject _shield;
-    
-    private PlayerModel _playerModel;
+    [SerializeField] private GameObject _deathCollider;
 
-    private bool _death = false;
+    private PlayerModel _playerModel;
+    private Animator _animator;
+
+    
 
     private void Start()
     {
         _playerModel = gameObject.GetComponent<PlayerModel>();
         _shield.SetActive(false);
+        _animator = GetComponent<Animator>();
     }
     #region TrashAndCoins
     public void AddTrash(int TrashCount)
@@ -74,7 +78,7 @@ public class PlayerModel : MonoBehaviour
         }
     }
 
-    public void RemoveHealth(int health)
+    public void RemoveHealth(int _damage)
     {
 
         if (_isShield)
@@ -82,20 +86,26 @@ public class PlayerModel : MonoBehaviour
             DisActiveShield();
             return;
         }
-        else
+        else if (_health > 0)
         {
-            if (_health > 0)
-            {
-                _health -= health;
-            }
+            _health -= _damage;
+
+            _animator.SetTrigger("HurtTrigger");
         }
-        
 
         if (_health == 0)
         {
-            _death = true;
-            PlayerDeath();
+            PlayerDeath();         
         }
+    }
+
+    private void PlayerDeath()
+    {
+        _death = true;
+        _animator.SetTrigger("DeathTrigger");
+        GetComponent<BoxCollider2D>().enabled = false;
+        _deathCollider.gameObject.SetActive(true);
+
     }
 
     public int GetMaxHealth()
@@ -108,9 +118,6 @@ public class PlayerModel : MonoBehaviour
         return _health;
     }
 
-    private void PlayerDeath()
-    {
-        gameObject.SetActive(false);
-    }
+    
     #endregion
 }

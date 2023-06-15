@@ -5,17 +5,22 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] private float _jumpForse;
     private Rigidbody2D _rb;
     private bool _onGround;
+    private Animator _animator;
     void Start()
     {
         _rb= GetComponent<Rigidbody2D>();
-        //_jumpForse = 65;
+        _animator = GetComponent<Animator>();
     }
 
     public void Jump()
     {
-        if (_onGround)
+        if (GetComponent<PlayerModel>()._death == false)
         {
-            _rb.AddForce(new Vector2(0, _jumpForse), ForceMode2D.Impulse);
+            if (_onGround)
+            {
+                _rb.AddForce(new Vector2(0, _jumpForse), ForceMode2D.Impulse);
+                _animator.SetTrigger("JumpTrigger");
+            }
         }
     }
 
@@ -25,6 +30,7 @@ public class PlayerJump : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             _onGround = true;
+            _animator.SetBool("IsGround", true);
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
@@ -32,6 +38,7 @@ public class PlayerJump : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             _onGround = false;
+            _animator.SetBool("IsGround", false);
         }
     }
 }
