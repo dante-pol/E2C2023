@@ -13,9 +13,13 @@ public class PlayerJump : MonoBehaviour
 
     public void Jump()
     {
-        if (_onGround)
+        if (gameObject.GetComponent<PlayerMove>().IsSlide == false)
         {
-            _rb.AddForce(new Vector2(0, _jumpForse), ForceMode2D.Impulse);
+
+            if (_onGround)
+            {
+                _rb.AddForce(new Vector2(0, _jumpForse), ForceMode2D.Impulse);
+            }
         }
     }
 
