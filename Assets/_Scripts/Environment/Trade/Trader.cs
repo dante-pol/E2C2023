@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class Trader : MonoBehaviour
 {
     [SerializeField] private GameObject _traderButton;
-    //[SerializeField] private Plane _traderPlane;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

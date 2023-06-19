@@ -5,7 +5,7 @@ public class Trade : MonoBehaviour
 {
     private PlayerModel _pMod;
     private Buffs _buffs;
-    [SerializeField] private int[] _prices = { 0, 0, 0 };
+    [SerializeField] private double[] _prices = { 0, 0, 0 };
     [SerializeField] private Button[] _buttons = new Button[3];
 
     void Start()
