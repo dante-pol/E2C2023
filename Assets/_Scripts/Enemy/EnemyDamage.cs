@@ -6,11 +6,11 @@ public class EnemyDamage : MonoBehaviour
     [SerializeField] private int _damage;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        var playerHealth = collision.gameObject.GetComponent<PlayerModel>();
+        //var playerHealth = collision.gameObject.GetComponent<PlayerModel>();
 
-        if (playerHealth != null)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            playerHealth.RemoveHealth(_damage);
+            collision.gameObject.GetComponent<PlayerModel>().RemoveHealth(_damage);
         }
     }
 }
