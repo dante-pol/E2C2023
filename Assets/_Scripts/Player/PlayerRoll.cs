@@ -10,7 +10,8 @@ public class PlayerRoll : MonoBehaviour
     private PlayerMove _pm;
     private SpriteRenderer _sr;
     private Animator _animator;
-    void Start()
+
+    private void Start()
     {
         _bc = GetComponent<BoxCollider2D>();
         _pm = GetComponent<PlayerMove>();
@@ -18,9 +19,9 @@ public class PlayerRoll : MonoBehaviour
         _animator = GetComponent<Animator>();   
     }
 
-    void Update()
+    private void Update()
     {
-        if (GetComponent<PlayerModel>()._death == false)
+        if (GetComponent<PlayerModel>()._death == false && GetComponent<PlayerMove>().IsSlide == false)
         {
             if (_joystick.Vertical < -0.5)
             {
@@ -28,10 +29,10 @@ public class PlayerRoll : MonoBehaviour
                 _pm.MaxSpeed = 5;
                 _bc.enabled = false;
                 _bcRoll.enabled = true;
+
                 _sr.flipX = true;
 
                 _animator.SetBool("IsSquat", true);
-
             }
             else
             {
@@ -39,6 +40,7 @@ public class PlayerRoll : MonoBehaviour
                 _pm.MaxSpeed = 15;
                 _bc.enabled = true;
                 _bcRoll.enabled = false;
+
                 _sr.flipX = false;
 
                 _animator.SetBool("IsSquat", false);

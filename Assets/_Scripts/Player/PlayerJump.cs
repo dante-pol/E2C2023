@@ -14,7 +14,7 @@ public class PlayerJump : MonoBehaviour
 
     public void Jump()
     {
-        if (GetComponent<PlayerModel>()._death == false)
+        if (GetComponent<PlayerModel>()._death == false && GetComponent<PlayerMove>().IsSlide == false)
         {
             if (_onGround)
             {
