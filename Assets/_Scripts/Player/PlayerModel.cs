@@ -55,6 +55,7 @@ public class PlayerModel : MonoBehaviour
     }
     #endregion
 
+    #region Shield
     public void ActiveShield()
     {
         _isShield = true;
@@ -66,8 +67,7 @@ public class PlayerModel : MonoBehaviour
         _isShield = false;
         _shield.SetActive(false);
     }
-
-    
+    #endregion
 
     #region Health action
     public void AddHealth(int health)

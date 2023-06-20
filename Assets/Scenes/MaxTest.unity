@@ -1486,10 +1486,12 @@ MonoBehaviour:
   TrashCounter: 0
   CoinsCounter: 0
   minTrashForConvertCoins: 0
+  _death: 0
   _health: 3
   _maxHealth: 3
   _isShield: 0
   _shield: {fileID: 7906711}
+  _deathCollider: {fileID: 0}
 --- !u!114 &1689191613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1518,7 +1520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _joystick: {fileID: 1332947459}
   Speed: 2.5
-  MaxSpeed: 6
+  MaxSpeed: 15
   _velocityY: 0
   SlideForce: {x: 0.5, y: 0}
   IsSlide: 0
@@ -1550,6 +1552,7 @@ MonoBehaviour:
   _timeUmbrella: 5
   UmbrellaPickUp: 0
   _slowingDownTheFall: 10
+  Slowingdown: 0
 --- !u!1 &1829902408
 GameObject:
   m_ObjectHideFlags: 0

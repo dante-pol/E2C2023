@@ -36,14 +36,28 @@ public class PlayerRoll : MonoBehaviour
             }
             else
             {
-                _pm.Speed = 2.5f;
-                _pm.MaxSpeed = 15;
-                _bc.enabled = true;
-                _bcRoll.enabled = false;
+                if (gameObject.GetComponent<Buffs>().Slowingdown == true)
+                {
+                    _pm.Speed = 1f;
+                    _pm.MaxSpeed = 10;
+                    _bc.enabled = true;
+                    _bcRoll.enabled = false;
 
-                _sr.flipX = false;
+                    _sr.flipX = false;
 
-                _animator.SetBool("IsSquat", false);
+                    _animator.SetBool("IsSquat", false);
+                }
+                else
+                {
+                    _pm.Speed = 2.5f;
+                    _pm.MaxSpeed = 15;
+                    _bc.enabled = true;
+                    _bcRoll.enabled = false;
+
+                    _sr.flipX = false;
+
+                    _animator.SetBool("IsSquat", false);
+                }
             }
         }
     }

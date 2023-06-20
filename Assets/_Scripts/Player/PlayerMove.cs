@@ -5,15 +5,14 @@ public class PlayerMove : MonoBehaviour
 {
     [Header("Move")]
     [SerializeField] private VariableJoystick _joystick;
-    [SerializeField] [Range(1, 50)] public float Speed;
-    [SerializeField] [Range(5, 50)] public float MaxSpeed;
+    [SerializeField] [Range(1, 50)] public float Speed = 2.5f;
+    [SerializeField] [Range(5, 50)] public float MaxSpeed = 15;
     [SerializeField] private float _velocityY;
 
     public Vector2 SlideForce;
     private float _velocityX;
     private Rigidbody2D _rb;
     private Buffs _buffs;
-    private float _velocityX;
     private Animator _animator;
 
     public bool IsSlide;
