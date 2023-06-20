@@ -1,4 +1,3 @@
-using System.Timers;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
@@ -13,7 +12,6 @@ public class PlayerMove : MonoBehaviour
     private float _velocityX;
     private Rigidbody2D _rb;
     private Buffs _buffs;
-    private float _velocityX;
     private Animator _animator;
 
     public bool IsSlide;
@@ -22,13 +20,13 @@ public class PlayerMove : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _buffs = GetComponent<Buffs>();
-        _animator = GetComponent<Animator>();
+        //_animator = GetComponent<Animator>();
     }
 
     
     private void Update()
     {
-        if(GetComponent<PlayerModel>()._death == false)
+        if(!GetComponent<PlayerModel>().Death && !IsSlide)
         {
             _velocityX = _joystick.Horizontal * Speed;
 
@@ -45,23 +43,10 @@ public class PlayerMove : MonoBehaviour
             Flip();
 
             _rb.velocity = new Vector2(MaxSpeed * _joystick.Horizontal, _velocityY);
-            _animator.SetFloat("velocityHorizontal", Mathf.Abs(_velocityX));
+            //_animator.SetFloat("velocityHorizontal", Mathf.Abs(_velocityX));
         }
 
-        if (IsSlide == false)
-        {
-            _velocityX = _joystick.Horizontal * Speed;
-            _rb.velocity += new Vector2(_velocityX, 0);
-
-            SlowingFlow();
-
-            if (Mathf.Abs(_rb.velocity.sqrMagnitude) > MaxSpeed * MaxSpeed)
-            {
-                _rb.velocity = new Vector2(MaxSpeed * _joystick.Horizontal, _velocityY);
-            }
-        }
-
-        if (IsSlide)
+        else
         {
             _rb.AddForce(SlideForce, ForceMode2D.Impulse);
         }
@@ -69,7 +54,7 @@ public class PlayerMove : MonoBehaviour
 
     public void SlowingFlow()
     {
-        if (_buffs.UmbrellaPickUp == true)
+        if (_buffs.UmbrellaPickUp)
         {
             if (_rb.velocity.y < 0)
             {

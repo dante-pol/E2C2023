@@ -12,6 +12,9 @@ public class Trader : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             _traderButton.SetActive(true);
+            _traderButton.transform.GetChild(0).gameObject.SetActive(true);
+            _traderButton.GetComponent<Image>().enabled = true;
+            _traderButton.GetComponent<Button>().enabled = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -19,6 +22,9 @@ public class Trader : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             _traderButton.SetActive(false);
+            _traderButton.transform.GetChild(0).gameObject.SetActive(false);
+            _traderButton.GetComponent<Image>().enabled = false;
+            _traderButton.GetComponent<Button>().enabled = false;
         }
     }
 }

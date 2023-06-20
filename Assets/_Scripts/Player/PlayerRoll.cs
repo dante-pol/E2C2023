@@ -21,7 +21,7 @@ public class PlayerRoll : MonoBehaviour
 
     private void Update()
     {
-        if (GetComponent<PlayerModel>()._death == false && GetComponent<PlayerMove>().IsSlide == false)
+        if (GetComponent<PlayerModel>().Death == false && GetComponent<PlayerMove>().IsSlide == false)
         {
             if (_joystick.Vertical < -0.5)
             {

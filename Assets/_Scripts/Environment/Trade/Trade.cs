@@ -13,6 +13,8 @@ public class Trade : MonoBehaviour
         _pMod = GetComponent<PlayerModel>();
         _buffs = GetComponent<Buffs>();
     }
+
+    #region Buffs functions
     public void Buff1()
     {
         if (_pMod.CoinsCounter >= _prices[0])
@@ -40,4 +42,5 @@ public class Trade : MonoBehaviour
             _buttons[2].interactable = false;
         }
     }
+    #endregion
 }

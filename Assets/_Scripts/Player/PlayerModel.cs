@@ -9,7 +9,7 @@ public class PlayerModel : MonoBehaviour
     public double CoinsCounter = 0;
 
     [Header("Data player")]
-    [HideInInspector] public bool _death = false;
+    [HideInInspector] public bool Death = false;
     [SerializeField] private int _health;
     [SerializeField] private int _maxHealth;
     [SerializeField] private bool _isShield;
@@ -26,7 +26,7 @@ public class PlayerModel : MonoBehaviour
     {
         _playerModel = gameObject.GetComponent<PlayerModel>();
         _shield.SetActive(false);
-        _animator = GetComponent<Animator>();
+        // _animator = GetComponent<Animator>();
     }
     #region TrashAndCoins
     public void AddTrash(int TrashCount)
@@ -90,7 +90,7 @@ public class PlayerModel : MonoBehaviour
         {
             _health -= _damage;
 
-            _animator.SetTrigger("HurtTrigger");
+            //_animator.SetTrigger("HurtTrigger");
         }
 
         if (_health == 0)
@@ -101,11 +101,8 @@ public class PlayerModel : MonoBehaviour
 
     private void PlayerDeath()
     {
-        _death = true;
-        _animator.SetTrigger("DeathTrigger");
-        GetComponent<BoxCollider2D>().enabled = false;
-        _deathCollider.gameObject.SetActive(true);
-
+        Death = true;
+        //_animator.SetTrigger("DeathTrigger");
     }
 
     public int GetMaxHealth()
