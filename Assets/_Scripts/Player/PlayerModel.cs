@@ -24,7 +24,7 @@ public class PlayerModel : MonoBehaviour
 
     private void Start()
     {
-        _playerModel = gameObject.GetComponent<PlayerModel>();
+        _playerModel = GetComponent<PlayerModel>();
         _shield.SetActive(false);
         _animator = GetComponent<Animator>();
     }
@@ -55,6 +55,7 @@ public class PlayerModel : MonoBehaviour
     }
     #endregion
 
+    #region Shield
     public void ActiveShield()
     {
         _isShield = true;
@@ -66,8 +67,7 @@ public class PlayerModel : MonoBehaviour
         _isShield = false;
         _shield.SetActive(false);
     }
-
-    
+    #endregion
 
     #region Health action
     public void AddHealth(int health)
@@ -80,7 +80,6 @@ public class PlayerModel : MonoBehaviour
 
     public void RemoveHealth(int _damage)
     {
-
         if (_isShield)
         {
             DisActiveShield();

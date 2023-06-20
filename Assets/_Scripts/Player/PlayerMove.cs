@@ -13,7 +13,6 @@ public class PlayerMove : MonoBehaviour
     private float _velocityX;
     private Rigidbody2D _rb;
     private Buffs _buffs;
-    private float _velocityX;
     private Animator _animator;
 
     public bool IsSlide;
@@ -28,7 +27,7 @@ public class PlayerMove : MonoBehaviour
     
     private void Update()
     {
-        if(GetComponent<PlayerModel>()._death == false)
+        if(GetComponent<PlayerModel>()._death == false && !IsSlide)
         {
             _velocityX = _joystick.Horizontal * Speed;
 
@@ -46,19 +45,6 @@ public class PlayerMove : MonoBehaviour
 
             _rb.velocity = new Vector2(MaxSpeed * _joystick.Horizontal, _velocityY);
             _animator.SetFloat("velocityHorizontal", Mathf.Abs(_velocityX));
-        }
-
-        if (IsSlide == false)
-        {
-            _velocityX = _joystick.Horizontal * Speed;
-            _rb.velocity += new Vector2(_velocityX, 0);
-
-            SlowingFlow();
-
-            if (Mathf.Abs(_rb.velocity.sqrMagnitude) > MaxSpeed * MaxSpeed)
-            {
-                _rb.velocity = new Vector2(MaxSpeed * _joystick.Horizontal, _velocityY);
-            }
         }
 
         if (IsSlide)
