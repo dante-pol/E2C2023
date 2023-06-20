@@ -8,8 +8,6 @@ public class Buffs : MonoBehaviour
     [HideInInspector]public bool UmbrellaPickUp;
     [Range(-5, 0)] public float _slowingDownTheFall;
 
-    public bool Slowingdown = false;
-
     #region Ubrella buff
     public void Umbrella()
     {
