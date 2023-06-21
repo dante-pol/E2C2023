@@ -4,10 +4,10 @@ using UnityEngine;
 public class RainInstantiate : MonoBehaviour
 {
 
-    [Header("Спавн дождя относительно игрока")]
+    [Header("Появление дождя относительно игрока")]
     [SerializeField] private Vector3 SpawnPosition;
 
-    [Header("Время спавна дождя")]
+    [Header("Время появления дождя")]
     [SerializeField] private int _minTimeForSpawn;
     [SerializeField] private int _maxTimeForSpawn;
 
