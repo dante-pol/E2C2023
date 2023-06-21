@@ -20,7 +20,7 @@ public class Trade : MonoBehaviour
         if (_pMod.CoinsCounter >= _prices[0])
         {
             _pMod.CoinsCounter -= _prices[0];
-            _buffs.Buff1 = true;
+            _pMod.IsShield = true;
             _buttons[0].interactable = false;
         }
     }
@@ -29,7 +29,7 @@ public class Trade : MonoBehaviour
         if (_pMod.CoinsCounter >= _prices[1])
         {
             _pMod.CoinsCounter -= _prices[1];
-            _buffs.Buff2 = true;
+            _buffs.UmbrellaPickUp = true;
             _buttons[1].interactable = false;
         }
     }
@@ -37,9 +37,12 @@ public class Trade : MonoBehaviour
     {
         if (_pMod.CoinsCounter >= _prices[2])
         {
-            _pMod.CoinsCounter -= _prices[2];
-            _buffs.Buff3 = true;
-            _buttons[2].interactable = false;
+            if (_pMod.GetMaxHealth() > _pMod.GetHealth())
+            {
+                _pMod.CoinsCounter -= _prices[2];
+                _pMod.AddHealth(1);
+                _buttons[2].interactable = false;
+            }
         }
     }
     #endregion

@@ -1042,7 +1042,7 @@ GameObject:
   - component: {fileID: 553382655}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1646,7 +1646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08f26f84531592d44a3e31d5f911a55e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpForse: 0
+  _jumpForse: 65
 --- !u!114 &734221681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1701,9 +1701,6 @@ MonoBehaviour:
   _timeUmbrella: 0
   UmbrellaPickUp: 0
   _slowingDownTheFall: 0
-  Buff1: 0
-  Buff2: 0
-  Buff3: 0
 --- !u!114 &734221684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1718,11 +1715,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrashCounter: 0
   minTrashForConvertCoins: 0
-  CoinsCounter: 0
+  CoinsCounter: 100
   Death: 0
   _health: 3
-  _maxHealth: 0
-  _isShield: 0
+  _maxHealth: 10
+  IsShield: 0
   _shield: {fileID: 1451882186}
   _deathCollider: {fileID: 0}
 --- !u!114 &734221685
@@ -1738,9 +1735,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prices:
-  - 2345
-  - 254354
-  - 23423535
+  - 1
+  - 2
+  - 3
   _buttons:
   - {fileID: 1260925554}
   - {fileID: 1796454388}

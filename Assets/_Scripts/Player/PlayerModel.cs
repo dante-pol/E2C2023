@@ -12,7 +12,7 @@ public class PlayerModel : MonoBehaviour
     [HideInInspector] public bool Death = false;
     [SerializeField] private int _health;
     [SerializeField] private int _maxHealth;
-    [SerializeField] private bool _isShield;
+    public bool IsShield;
 
     [SerializeField] private GameObject _shield;
     [SerializeField] private GameObject _deathCollider;
@@ -57,13 +57,13 @@ public class PlayerModel : MonoBehaviour
 
     public void ActiveShield()
     {
-        _isShield = true;
+        IsShield = true;
         _shield.SetActive(true);
     }
 
     public void DisActiveShield()
     {
-        _isShield = false;
+        IsShield = false;
         _shield.SetActive(false);
     }
 
@@ -81,7 +81,7 @@ public class PlayerModel : MonoBehaviour
     public void RemoveHealth(int _damage)
     {
 
-        if (_isShield)
+        if (IsShield)
         {
             DisActiveShield();
             return;
