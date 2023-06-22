@@ -11,4 +11,11 @@ public class EnemyDamage : MonoBehaviour
             collision.gameObject.GetComponent<PlayerModel>().RemoveHealth(_damage);
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<PlayerModel>().RemoveHealth(_damage);
+        }
+    }
 }

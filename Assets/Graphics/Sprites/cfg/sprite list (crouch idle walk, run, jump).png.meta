@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 91248d500fe46ca44a42593285060669
+guid: 686a99680faf14943bda457d4c7733cd
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,211 +117,190 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player push 48x48_0
+      name: sprite list (crouch idle walk, run, jump)_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 10
-        width: 24
-        height: 22
+        x: 11
+        y: 371
+        width: 99
+        height: 75
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6454bac89175fba41a551205a130fa36
-      internalID: -402110440
+      spriteID: 25d71ca5962344441a3dc4910629fbe0
+      internalID: -706466578
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player push 48x48_1
+      name: sprite list (crouch idle walk, run, jump)_1
       rect:
         serializedVersion: 2
-        x: 57
-        y: 10
-        width: 27
-        height: 23
+        x: 129
+        y: 371
+        width: 99
+        height: 73
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2e52749749de594b9e30f821cfc9d5e
-      internalID: 532793621
+      spriteID: 202d5ba5ce3bb044e838f083419a04d6
+      internalID: 718626084
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player push 48x48_2
+      name: sprite list (crouch idle walk, run, jump)_2
       rect:
         serializedVersion: 2
-        x: 105
-        y: 10
-        width: 27
-        height: 23
+        x: 11
+        y: 269
+        width: 99
+        height: 75
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ef9a16a694126f4a9eb8146499ad1f2
-      internalID: -1845258496
+      spriteID: 9f8002a4dc7fb554ba695cff10e68e04
+      internalID: 1488681350
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player push 48x48_3
+      name: sprite list (crouch idle walk, run, jump)_3
       rect:
         serializedVersion: 2
-        x: 153
-        y: 10
-        width: 27
-        height: 23
+        x: 144
+        y: 269
+        width: 99
+        height: 75
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb5f10ddfc2e3cc4797486d8d3c5a514
-      internalID: 1578399335
+      spriteID: 06ab7b76a4850f14695d5f28748d8a54
+      internalID: 631001315
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player push 48x48_4
+      name: sprite list (crouch idle walk, run, jump)_4
       rect:
         serializedVersion: 2
-        x: 206
-        y: 10
-        width: 22
-        height: 22
+        x: 246
+        y: 269
+        width: 99
+        height: 75
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e52d22390f860ab4ba746f783157a869
-      internalID: -1561789310
+      spriteID: 84635d1d0c03fe14e8fabc82a5d8aa0f
+      internalID: 277735764
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player push 48x48_5
+      name: sprite list (crouch idle walk, run, jump)_5
       rect:
         serializedVersion: 2
-        x: 254
-        y: 10
-        width: 22
-        height: 22
+        x: 357
+        y: 268
+        width: 99
+        height: 75
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7bf16c6d14258c4b8799c93d735f557
-      internalID: -94969596
+      spriteID: eedd30cfd2ffa3641bbc02cfc90527e7
+      internalID: 1685957354
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player push 48x48_6
+      name: sprite list (crouch idle walk, run, jump)_6
       rect:
         serializedVersion: 2
-        x: 300
-        y: 10
-        width: 24
-        height: 23
+        x: 11
+        y: 155
+        width: 64
+        height: 101
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1572b5f8d4ce7604587d84adf22aa127
-      internalID: -722575426
+      spriteID: 09edd3f81c9d86e4da4cc531ec173d8c
+      internalID: 867271806
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player push 48x48_7
+      name: sprite list (crouch idle walk, run, jump)_7
       rect:
         serializedVersion: 2
-        x: 346
-        y: 10
-        width: 26
-        height: 23
+        x: 141
+        y: 153
+        width: 64
+        height: 101
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 963bd4a6f1ebbde4e8eda4d314e1699a
-      internalID: -461774819
+      spriteID: fb0616822ff4e8947b7abe4fdd648e79
+      internalID: 1960654447
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player push 48x48_8
+      name: sprite list (crouch idle walk, run, jump)_8
       rect:
         serializedVersion: 2
-        x: 394
-        y: 10
-        width: 26
-        height: 23
+        x: 279
+        y: 157
+        width: 64
+        height: 101
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80ad295836c756c4c8d023efef7beb8d
-      internalID: -615272743
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player push 48x48_9
-      rect:
-        serializedVersion: 2
-        x: 446
-        y: 10
-        width: 22
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a6c866dad6bafe4ebc2a72ff8f8a33e
-      internalID: -393002137
+      spriteID: 7901a3613b93f2a4daee9569c0dfb6f4
+      internalID: -2000678499
       vertices: []
       indices: 
       edges: []
@@ -337,16 +316,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      player push 48x48_0: -402110440
-      player push 48x48_1: 532793621
-      player push 48x48_2: -1845258496
-      player push 48x48_3: 1578399335
-      player push 48x48_4: -1561789310
-      player push 48x48_5: -94969596
-      player push 48x48_6: -722575426
-      player push 48x48_7: -461774819
-      player push 48x48_8: -615272743
-      player push 48x48_9: -393002137
+      sprite list (crouch idle walk, run, jump)_0: -706466578
+      sprite list (crouch idle walk, run, jump)_1: 718626084
+      sprite list (crouch idle walk, run, jump)_2: 1488681350
+      sprite list (crouch idle walk, run, jump)_3: 631001315
+      sprite list (crouch idle walk, run, jump)_4: 277735764
+      sprite list (crouch idle walk, run, jump)_5: 1685957354
+      sprite list (crouch idle walk, run, jump)_6: 867271806
+      sprite list (crouch idle walk, run, jump)_7: 1960654447
+      sprite list (crouch idle walk, run, jump)_8: -2000678499
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

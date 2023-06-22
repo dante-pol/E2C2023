@@ -70,8 +70,4 @@ public class CameraFollow : MonoBehaviour
         Gizmos.DrawLine(new Vector3(_maxX + maxXmaxY.x, _maxY + maxXmaxY.y / 2), new Vector3(_maxX + maxXminY.x, _minY + maxXminY.y)); // Right
     }
 
-    //  minXminY 
-    //  maxXminY
-    //  minXmaxY
-    //  maxXmaxY
 }

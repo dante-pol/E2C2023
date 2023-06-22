@@ -4,8 +4,8 @@ public class PlayerMove : MonoBehaviour
 {
     [Header("Move")]
     [SerializeField] private VariableJoystick _joystick;
-    [SerializeField] [Range(1, 50)] public float Speed;
-    [SerializeField] [Range(5, 50)] public float MaxSpeed;
+    [SerializeField] [Range(1, 50)] public float Speed = 2.5f;
+    [SerializeField] [Range(5, 50)] public float MaxSpeed = 15;
     [SerializeField] private float _velocityY;
 
     public Vector2 SlideForce;
@@ -43,10 +43,18 @@ public class PlayerMove : MonoBehaviour
             Flip();
 
             _rb.velocity = new Vector2(MaxSpeed * _joystick.Horizontal, _velocityY);
+<<<<<<< HEAD
             //_animator.SetFloat("velocityHorizontal", Mathf.Abs(_velocityX));
         }
 
         else
+=======
+            _animator.SetFloat("velocityHorizontal", Mathf.Abs(_velocityX));
+            _animator.SetFloat("velocityVertical", _velocityY);
+        }
+
+        if (IsSlide)
+>>>>>>> origin/dev
         {
             _rb.AddForce(SlideForce, ForceMode2D.Impulse);
         }
