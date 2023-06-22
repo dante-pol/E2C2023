@@ -27,6 +27,7 @@ public class CameraFollow : MonoBehaviour
     private void Update()
     {
         Vector3 PlayerPosition = _playerTransform.localPosition;
+
         PlayerPosition.z = -10;
 
         if(_playerTransform.position.x <= _minX)
