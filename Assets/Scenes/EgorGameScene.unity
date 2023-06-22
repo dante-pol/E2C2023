@@ -707,17 +707,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -8464253561026849879, guid: 0cb056bdcd4c6cd4abf79b4e999e6da4, type: 3}
-      propertyPath: fireRate
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 6269337493566045440, guid: 0cb056bdcd4c6cd4abf79b4e999e6da4, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6269337493566045440, guid: 0cb056bdcd4c6cd4abf79b4e999e6da4, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6269337493566045503, guid: 0cb056bdcd4c6cd4abf79b4e999e6da4, type: 3}
       propertyPath: m_RootOrder
@@ -770,22 +762,6 @@ PrefabInstance:
     - target: {fileID: 7014464313905429797, guid: 0cb056bdcd4c6cd4abf79b4e999e6da4, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 7596840298173923160, guid: 0cb056bdcd4c6cd4abf79b4e999e6da4, type: 3}
-      propertyPath: m_Size.x
-      value: 22.247072
-      objectReference: {fileID: 0}
-    - target: {fileID: 7596840298173923160, guid: 0cb056bdcd4c6cd4abf79b4e999e6da4, type: 3}
-      propertyPath: m_Size.y
-      value: 14.271938
-      objectReference: {fileID: 0}
-    - target: {fileID: 7596840298173923160, guid: 0cb056bdcd4c6cd4abf79b4e999e6da4, type: 3}
-      propertyPath: m_Offset.x
-      value: -1.6235361
-      objectReference: {fileID: 0}
-    - target: {fileID: 7596840298173923160, guid: 0cb056bdcd4c6cd4abf79b4e999e6da4, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.36403084
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cb056bdcd4c6cd4abf79b4e999e6da4, type: 3}
@@ -1386,12 +1362,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TrashCounter: 0
-  CoinsCounter: 0
   minTrashForConvertCoins: 0
-  _death: 0
+  CoinsCounter: 0
+  Death: 0
   _health: 37
   _maxHealth: 51
-  _isShield: 0
+  IsShield: 0
   _shield: {fileID: 1014616455}
   _deathCollider: {fileID: 2131834179}
 --- !u!114 &1689191613
@@ -1658,11 +1634,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5684410829771573217, guid: 98961850dec6cbe429acd5f96cc13a92, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.281132
+      value: 16.08
       objectReference: {fileID: 0}
     - target: {fileID: 5684410829771573217, guid: 98961850dec6cbe429acd5f96cc13a92, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.4008436
+      value: 2.35
       objectReference: {fileID: 0}
     - target: {fileID: 5684410829771573217, guid: 98961850dec6cbe429acd5f96cc13a92, type: 3}
       propertyPath: m_LocalPosition.z

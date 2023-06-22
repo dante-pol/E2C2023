@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bullet: {fileID: 6817073297671977617, guid: 0675c1954407f8742b008c7f3e4d8ae6, type: 3}
-  fireRate: 15
+  fireRate: 3
   _shotLocation: {fileID: 6327977561805216076}
 --- !u!1 &8483150323974521868
 GameObject:
