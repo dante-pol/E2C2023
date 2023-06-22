@@ -20,7 +20,7 @@ public class PlayerMove : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _buffs = GetComponent<Buffs>();
-        //_animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
     }
 
     
