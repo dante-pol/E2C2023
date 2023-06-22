@@ -43,18 +43,11 @@ public class PlayerMove : MonoBehaviour
             Flip();
 
             _rb.velocity = new Vector2(MaxSpeed * _joystick.Horizontal, _velocityY);
-<<<<<<< HEAD
-            //_animator.SetFloat("velocityHorizontal", Mathf.Abs(_velocityX));
-        }
-
-        else
-=======
             _animator.SetFloat("velocityHorizontal", Mathf.Abs(_velocityX));
             _animator.SetFloat("velocityVertical", _velocityY);
         }
 
         if (IsSlide)
->>>>>>> origin/dev
         {
             _rb.AddForce(SlideForce, ForceMode2D.Impulse);
         }
