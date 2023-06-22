@@ -5,14 +5,14 @@ public class PlayerModel : MonoBehaviour
 {
     [Header("Data currency")]
     [SerializeField] private double TrashCounter = 0;
-    [SerializeField] private double CoinsCounter = 0;
     [SerializeField] private double minTrashForConvertCoins = 0;
+    public double CoinsCounter = 0;
 
     [Header("Data player")]
-    [HideInInspector] public bool _death = false;
+    [HideInInspector] public bool Death = false;
     [SerializeField] private int _health;
     [SerializeField] private int _maxHealth;
-    [SerializeField] private bool _isShield;
+    public bool IsShield;
 
     [SerializeField] private GameObject _shield;
     [SerializeField] private GameObject _deathCollider;
@@ -26,7 +26,7 @@ public class PlayerModel : MonoBehaviour
     {
         _playerModel = GetComponent<PlayerModel>();
         _shield.SetActive(false);
-        _animator = GetComponent<Animator>();
+        // _animator = GetComponent<Animator>();
     }
     #region TrashAndCoins
     public void AddTrash(int TrashCount)
@@ -58,13 +58,13 @@ public class PlayerModel : MonoBehaviour
     #region Shield
     public void ActiveShield()
     {
-        _isShield = true;
+        IsShield = true;
         _shield.SetActive(true);
     }
 
     public void DisActiveShield()
     {
-        _isShield = false;
+        IsShield = false;
         _shield.SetActive(false);
     }
     #endregion
@@ -80,7 +80,8 @@ public class PlayerModel : MonoBehaviour
 
     public void RemoveHealth(int _damage)
     {
-        if (_isShield)
+
+        if (IsShield)
         {
             DisActiveShield();
             return;
@@ -89,7 +90,7 @@ public class PlayerModel : MonoBehaviour
         {
             _health -= _damage;
 
-            _animator.SetTrigger("HurtTrigger");
+            //_animator.SetTrigger("HurtTrigger");
         }
 
         if (_health == 0)
@@ -100,11 +101,8 @@ public class PlayerModel : MonoBehaviour
 
     private void PlayerDeath()
     {
-        _death = true;
-        _animator.SetTrigger("DeathTrigger");
-        GetComponent<BoxCollider2D>().enabled = false;
-        _deathCollider.gameObject.SetActive(true);
-
+        Death = true;
+        //_animator.SetTrigger("DeathTrigger");
     }
 
     public int GetMaxHealth()

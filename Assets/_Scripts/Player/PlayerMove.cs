@@ -20,13 +20,13 @@ public class PlayerMove : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _buffs = GetComponent<Buffs>();
-        _animator = GetComponent<Animator>();
+        //_animator = GetComponent<Animator>();
     }
 
     
     private void Update()
     {
-        if(GetComponent<PlayerModel>()._death == false && !IsSlide)
+        if(!GetComponent<PlayerModel>().Death && !IsSlide)
         {
             _velocityX = _joystick.Horizontal * Speed;
 
@@ -55,7 +55,7 @@ public class PlayerMove : MonoBehaviour
 
     public void SlowingFlow()
     {
-        if (_buffs.UmbrellaPickUp == true)
+        if (_buffs.UmbrellaPickUp)
         {
             if (_rb.velocity.y < 0)
             {

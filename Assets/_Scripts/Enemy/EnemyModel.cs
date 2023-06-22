@@ -7,5 +7,10 @@ public class EnemyModel : MonoBehaviour
     public void RemoveHealth(int Damage)
     {
         _health -= Damage;
+        
+        if (_health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

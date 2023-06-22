@@ -10,7 +10,7 @@ public class PlayerAttackTest : MonoBehaviour
     }
     public void AttackTest()
     {
-        if (GetComponent<PlayerModel>()._death == false)
+        if (GetComponent<PlayerModel>().Death == false)
         {
             _animator.SetTrigger("AttackTrigger");
         }

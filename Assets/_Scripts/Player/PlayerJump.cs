@@ -14,12 +14,12 @@ public class PlayerJump : MonoBehaviour
 
     public void Jump()
     {
-        if (GetComponent<PlayerModel>()._death == false && GetComponent<PlayerMove>().IsSlide == false)
+        if (GetComponent<PlayerModel>().Death == false && GetComponent<PlayerMove>().IsSlide == false)
         {
             if (_onGround)
             {
                 _rb.AddForce(new Vector2(0, _jumpForse), ForceMode2D.Impulse);
-                _animator.SetTrigger("JumpTrigger");
+                //_animator.SetTrigger("JumpTrigger");
             }
         }
     }
@@ -30,7 +30,7 @@ public class PlayerJump : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             _onGround = true;
-            _animator.SetBool("IsGround", true);
+            //_animator.SetBool("IsGround", true);
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
@@ -38,7 +38,7 @@ public class PlayerJump : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             _onGround = false;
-            _animator.SetBool("IsGround", false);
+            //_animator.SetBool("IsGround", false);
         }
     }
 }
