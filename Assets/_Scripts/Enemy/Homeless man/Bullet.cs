@@ -1,3 +1,5 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -7,29 +9,32 @@ public class Bullet : MonoBehaviour
 
     private GameObject _target;
     private GameObject _enemy;
+    private Rigidbody2D _rb2D;
 
-    private float _targetHorizontal;
-    private float _enemyHorizontal;
+    [SerializeField] private float _targetHorizontal;
+    [SerializeField] private float _enemyHorizontal;
 
-    private float _dist;
-    private float _nextHorizontal;
-    private float _baseVertical;
-    private float _hieght;
+    [SerializeField] private float _dist;
+    [SerializeField] private float _nextHorizontal;
+    [SerializeField] private float _baseVertical;
+    [SerializeField] private float _hieght;
 
     private void Start()
     {
+        _rb2D = GetComponent<Rigidbody2D>();
+
         _target = GameObject.FindGameObjectWithTag("Player");
         _enemy = GameObject.FindGameObjectWithTag("Enemy");
 
         _targetHorizontal = _target.transform.position.x;
         _enemyHorizontal = _enemy.transform.position.x;
+
         _baseVertical = Mathf.Lerp(_enemy.transform.position.y, _target.transform.position.y, (_nextHorizontal - _enemyHorizontal) / _dist);
 
         Destroy(gameObject, _lifeTime);
     }
     private void Update()
     {
-
         _dist = _targetHorizontal - _enemyHorizontal;
         _nextHorizontal = Mathf.MoveTowards(transform.position.x, _targetHorizontal, _speed * Time.deltaTime);
 
@@ -37,14 +42,23 @@ public class Bullet : MonoBehaviour
 
         Vector3 movePosition = new Vector3(_nextHorizontal, _baseVertical + _hieght, transform.position.z);
         transform.position = movePosition;
+        StartCoroutine(Pos());
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             _target.gameObject.GetComponent<PlayerModel>().RemoveHealth(1);
             Destroy(gameObject);
         }
+    }
+    private IEnumerator Pos()
+    {
+        yield return new WaitForSeconds(1);
+        if(_hieght == 0)
+        {
+            Destroy(gameObject);
+        }
+
     }
 }

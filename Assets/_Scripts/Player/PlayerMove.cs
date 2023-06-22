@@ -44,6 +44,7 @@ public class PlayerMove : MonoBehaviour
 
             _rb.velocity = new Vector2(MaxSpeed * _joystick.Horizontal, _velocityY);
             _animator.SetFloat("velocityHorizontal", Mathf.Abs(_velocityX));
+            _animator.SetFloat("velocityVertical", _velocityY);
         }
 
         if (IsSlide)
