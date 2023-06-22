@@ -17,7 +17,7 @@ public class CameraFollow : MonoBehaviour
     private Vector3 minXmaxY;
     private Vector3 maxXmaxY;
 
-    private void Start()
+    private void Awake()
     {
         minXminY = Camera.main.ViewportToWorldPoint(new Vector2(0, -0.5f));
         maxXminY = Camera.main.ViewportToWorldPoint(new Vector2(1, -0.5f));
@@ -60,7 +60,6 @@ public class CameraFollow : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
-
 
         Gizmos.DrawLine(new Vector3(_minX + minXminY.x, _minY + minXminY.y), new Vector3(_maxX + maxXminY.x, _minY + maxXminY.y)); // Bottom
         Gizmos.DrawLine(new Vector3(_minX + minXmaxY.x, _maxY + minXmaxY.y / 2), new Vector3(_maxX + maxXmaxY.x, _maxY + maxXmaxY.y / 2)); // Top
