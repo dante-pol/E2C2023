@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main menu.unity
+    path: Assets/Scenes/Levels/Main menu.unity
     guid: 908e259288b5e39418de5cc308e920cc
   - enabled: 1
     path: Assets/Scenes/EgorGameScene.unity

@@ -11,7 +11,7 @@ public class PlayerModel : MonoBehaviour
     [Header("Data player")]
     [HideInInspector] public bool Death = false;
     [SerializeField] private int _health;
-    [SerializeField] private int _maxHealth;
+    private int _maxHealth;
     public bool IsShield;
 
     [SerializeField] private GameObject _shield;
