@@ -18,15 +18,11 @@ public class PlayerModel : MonoBehaviour
     [SerializeField] private GameObject _deathCollider;
 
     private PlayerModel _playerModel;
-    private Animator _animator;
-
-    
 
     private void Start()
     {
         _playerModel = GetComponent<PlayerModel>();
         _shield.SetActive(false);
-        // _animator = GetComponent<Animator>();
     }
     #region TrashAndCoins
     public void AddTrash(int TrashCount)
@@ -89,8 +85,6 @@ public class PlayerModel : MonoBehaviour
         else if (_health > 0)
         {
             _health -= _damage;
-
-            //_animator.SetTrigger("HurtTrigger");
         }
 
         if (_health == 0)
@@ -102,7 +96,6 @@ public class PlayerModel : MonoBehaviour
     private void PlayerDeath()
     {
         Death = true;
-        //_animator.SetTrigger("DeathTrigger");
     }
 
     public int GetMaxHealth()
