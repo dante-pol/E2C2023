@@ -1,10 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerRollAndClimbingVerification : MonoBehaviour
 {
     [SerializeField] private PlayerRollAndClimbing _prac;
+    private Animator _animator;
+
+    private void Start()
+    {
+        _animator = GameObject.FindObjectOfType<PlayerModel>().GetComponent<Animator>();
+    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -12,8 +16,9 @@ public class PlayerRollAndClimbingVerification : MonoBehaviour
         {
             _prac.UnderCeiling = true;
         }
-        else if (collision.gameObject.CompareTag("Ladder"))
+        if (collision.gameObject.CompareTag("Ladder"))
         {
+            _animator.SetBool("isClimb", true);
             _prac.IsClimbing = true;
         }
     }
@@ -23,8 +28,9 @@ public class PlayerRollAndClimbingVerification : MonoBehaviour
         {
             _prac.UnderCeiling = false;
         }
-        else if (collision.gameObject.CompareTag("Ladder"))
+        if (collision.gameObject.CompareTag("Ladder"))
         {
+            _animator.SetBool("isClimb", false);
             _prac.IsClimbing = false;
         }
     }

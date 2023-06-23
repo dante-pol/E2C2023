@@ -1,17 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
+    private bool isAttack;
     private bool _nextToEnemy;
-    private GameObject _enemy;
+    private Animator _animator;
+    [SerializeField] private GameObject _enemy;
 
+    private void Start()
+    {
+        _animator = GameObject.FindObjectOfType<PlayerModel>().GetComponent<Animator>();
+    }
     public void EnemyAttack()
     {
-        if (_nextToEnemy)
+        if (!_animator.GetCurrentAnimatorStateInfo(0).IsName("AttackPlayer"))
         {
-            _enemy.GetComponent<EnemyModel>().RemoveHealth(1);
+            _animator.SetTrigger("AttackTrigger");
+            if (_nextToEnemy)
+            {
+                _enemy.GetComponent<EnemyModel>().RemoveHealth(1);
+            }
         }
     }
 

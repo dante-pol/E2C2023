@@ -12,7 +12,7 @@ public class PlayerAttackTest : MonoBehaviour
     {
         if (GetComponent<PlayerModel>().Death == false)
         {
-            _animator.SetTrigger("AttackTrigger");
+
         }
             
     }

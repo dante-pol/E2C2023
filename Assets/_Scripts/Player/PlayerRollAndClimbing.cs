@@ -11,11 +11,13 @@ public class PlayerRollAndClimbing : MonoBehaviour
     private BoxCollider2D _bc;
     private Rigidbody2D _rb;
     private PlayerMove _pm;
-    public bool UnderCeiling;
+    private Animator _animator;
+    [HideInInspector] public bool UnderCeiling;
     public bool IsClimbing;
 
     void Start()
     {
+        _animator = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody2D>();
         _bc = GetComponent<BoxCollider2D>();
         _pm = GetComponent<PlayerMove>();
@@ -25,6 +27,7 @@ public class PlayerRollAndClimbing : MonoBehaviour
     {
         if (_joystick.Vertical < -0.5 || UnderCeiling)
         {
+            _animator.SetBool("IsSquat", true);
             _pm.Speed = 1f;
             _pm.MaxSpeed = 5;
             _bc.enabled = false;
@@ -44,32 +47,11 @@ public class PlayerRollAndClimbing : MonoBehaviour
         }
         else
         {
+            _animator.SetBool("IsSquat", false);
             _pm.Speed = 2.5f;
             _pm.MaxSpeed = 15;
             _bc.enabled = true;
             _bcRoll.enabled = false;
         }
     }
-    /*private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            UnderCeiling = true;
-        }
-        else if (collision.gameObject.CompareTag("Ladder"))
-        {
-            IsClimbing = true;
-        }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            UnderCeiling = false;
-        }
-        else if (collision.gameObject.CompareTag("Ladder"))
-        {
-            IsClimbing = false;
-        }
-    }*/
 }
